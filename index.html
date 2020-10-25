@@ -4,41 +4,113 @@
         <style>
         body {
             font-family: 'Trispace', sans-serif;
+            color: #2c3531;
             display: grid;
+            background-color: #d1e8e2;
+            margin: 0 !important;
         }
         .content {
             max-width: 800px;
             place-self: center;
+            padding: 0 20px;
+        }
+        input {
+            line-height: 18px;
+            text-align: center;
+            background-color: rgba(255,255,255,.6);
+            border: 0px;
+        }
+        code {
+            background-color: #f6f6f6;
+            border-radius: 4px;
+            padding: 5px 2.5px;
         }
         .h-flex {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
         }
+        .centered {
+            align-items: center;
+        }
+        .input-group {
+            margin: 20px 0px;
+        }
+        .output {
+            max-height: 450px;
+            overflow-y: scroll;
+        }
+        small {
+            opacity: 80%;
+        }
+        header {
+            padding: 15px 30px;
+            color: #d1e8e2;
+            background-color: #116466;
+        }
+        header h1 {
+            margin: 0 !important;
+        }
+        header p {
+            margin: 0 !important;
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+        }
         </style>
     </head>
     <body>
-        <div class="content">
-            <h1>Combinations</h1>
-            <p>A type that computes combinations of a collection's elements.</p>
-            <p>The <code>combinations(ofCount:)</code> method returns a sequence of all the different combinations of a collection's elements, with each combination in the order of the original collection.</p>
-            <div class="h-flex">
-                <div>
-                    <input type="number" id="combo-count-input" name="Combinations" min="1" max="5" value="1">
-                    <input type="string" id="combo-array-input">
-                </div>
-                <div id="combo-output"></div>
+        <header class="h-flex centered">
+            <div>
+                <h1>Swift Algorithms</h1>
+                <p><i>in wasm</i></p>
             </div>
-            <hr>
-            <h1>Permutations</h1>
-            <p>A type that computes permutations of a collection's elements, or of a subset of those elements.</p>
-            <p>The <code>permutations(ofCount:)</code> method, when called without the ofCount parameter, returns a sequence of all the different permutations of a collection's elements</p>
             <div class="h-flex">
+                <a href="https://github.com/apple/swift-algorithms">
+                    <img src="https://pngimg.com/uploads/github/github_PNG58.png" alt="github"/>
+                </a>
+                <a href="https://twitter.com/garrepi">
+                    <img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c53e.png" alt="twitter"/>
+                </a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="h-flex centered">
+                <h2>Combinations</h2>
+                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Combinations.md">ref</a>
+            </div>
+
+            <code>combinations(ofCount:)</code>
+            <p>A type that computes combinations of a collection's elements.</p>
+            <small>This method returns a sequence of all the different combinations of a collection's elements, with each combination in the order of the original collection.</small>
+            <div class="h-flex input-group">
                 <div>
-                    <input type="number" id="permute-count-input" min="1" max="5" value="1">
-                    <input type="string" id="permute-array-input">
+                    <input type="string" id="combo-array-input">
+                    <div class="h-flex centered">
+                        <small>count</small>
+                        <input type="number" id="combo-count-input" name="Combinations" min="1" max="5" value="1">
+                    </div>
                 </div>
-                <div id="permute-output"></div>
+                <div class="output" id="combo-output"></div>
+            </div>
+
+            <div class="h-flex centered">
+                <h2>Permutations</h2>
+                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Permutations.md">ref</a>
+            </div>
+            <code>permutations(ofCount:)</code>
+            <p>A type that computes permutations of a collection's elements, or of a subset of those elements.</p>
+            <small>This method, when called without the ofCount parameter, returns a sequence of all the different permutations of a collection's elements</small>
+            <div class="h-flex input-group">
+                <div>
+                    <input type="string" id="permute-array-input">
+                    <div class="h-flex centered">
+                        <small>count</small>
+                        <input type="number" id="permute-count-input" min="1" max="5" value="1">
+                    </div>
+                </div>
+                <div class="output" id="permute-output"></div>
             </div>
         </div>
     </body>
