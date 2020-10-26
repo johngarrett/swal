@@ -8,15 +8,15 @@ really just to explore SwiftWasm in a meaningful way. hopefully, someone finds d
 
 #### status
 
-[X] Combinations
-[X] Permutations
-[] Rotations
-[] Partitions
-[] Chain
-[] Product
-[] Cycled
-[] Random Subset
-[] Stable Subset
-[] Uniqued
-[] Chunked
-[] Indexed
+- [X] Combinations  
+- [X] Permutations  
+- [ ] Rotations  
+- [ ] Partitions  
+- [ ] Chain  
+- [ ] Product  
+- [ ] Cycled  
+- [ ] Random Subset  
+- [ ] Stable Subset  
+- [ ] Uniqued  
+- [ ] Chunked  
+- [ ] Indexed  
