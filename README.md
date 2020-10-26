@@ -2,11 +2,13 @@
 
 > Swift, Wasm, and Algorithms
 
-#### purpose 
+Try it out [here](https://garrepi.dev/swal)
+
+### purpose 
 
 really just to explore SwiftWasm in a meaningful way. hopefully, someone finds directly interacting with the algorithms in [this swift library](https://github.com/apple/swift-algorithms) useful
 
-#### status
+### status
 
 - [X] Combinations  
 - [X] Permutations  
