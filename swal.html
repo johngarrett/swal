@@ -1,5 +1,19 @@
 <html>
     <head>
+        <!-- Analytical info, you can disable this if you'd like -->
+        <script type="text/javascript">
+          var _paq = window._paq = window._paq || [];
+          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="https://garrepidev.matomo.cloud/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/garrepidev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
         <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;700&display=swap" rel="stylesheet">
         <style>
         body {
@@ -23,7 +37,7 @@
         code {
             background-color: #f6f6f6;
             border-radius: 4px;
-            padding: 5px 2.5px;
+            padding: 2.5px 5px;
         }
         .h-flex {
             display: flex;
@@ -80,7 +94,6 @@
                 <h2>Combinations</h2>
                 <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Combinations.md">ref</a>
             </div>
-
             <code>combinations(ofCount:)</code>
             <p>A type that computes combinations of a collection's elements.</p>
             <small>This method returns a sequence of all the different combinations of a collection's elements, with each combination in the order of the original collection.</small>
@@ -112,6 +125,19 @@
                 </div>
                 <div class="output" id="permute-output"></div>
             </div>
+            <div class="h-flex centered">
+                <h2>Rotation</h2>
+                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Rotate.md">ref</a>
+            </div>
+            <code>rotate(toStartAt: Index)</code>
+            <p>A mutating method that rotates the elements of a collection to new positions.</p>
+            <small>To work around the CoW / slice mutation problem for divide-and-conquer algorithms, which are the idiomatic use case for rotation, this also includes variants that take a range:</small>
+            <br>
+            <code>rotate(subrange: Range&lt;Index&gt;, toStartAt: Index)</code>
+            <input type="string" id="rotate-array-input">
+            <small>rotate to start at:</small>
+            <input type="range" min="0" max="100" value="1" id="rotate-to-input">
+            <div class="output" id="rotate-output"></div>
         </div>
     </body>
 </html>
