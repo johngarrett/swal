@@ -2,6 +2,12 @@ import HyperSwift
 import JavaScriptKit
 
 class PermutationsSection: Section {
+    enum Element: String {
+        case countInput = "perm-count-input",
+             arrayInput = "perm-array-input",
+             output = "perm-output"
+    }
+    
     var permutationCount: Int = 1 {
         didSet { updateElements() }
     }
@@ -16,13 +22,7 @@ class PermutationsSection: Section {
     lazy var updateCombinationInput = JSClosure { _ in
         self.inputArray = Array(from: element(Element.arrayInput.rawValue)?.value.string ?? "")
     }
-    
-    enum Element: String {
-        case countInput = "perm-count-input",
-             arrayInput = "perm-array-input",
-             output = "perm-output"
-    }
-    
+
     public init() {
         super.init(
             title: "Permutations",

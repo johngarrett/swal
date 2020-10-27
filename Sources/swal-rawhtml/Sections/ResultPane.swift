@@ -3,7 +3,7 @@ import HyperSwift
 class ResultPane: HTMLComponent {
     init(input: HTMLComponent, outputText: String, outputId: String) {
         super.init(
-            HStack {
+            HStack(wrap: .wrap) {
                 input
                     .rawCSS("flex-grow", "1")
                     .color(CSSColor("#000000"))
