@@ -10,12 +10,14 @@ func element(_ id: String) -> JSObject? {
 let document = JSObject.global.document
 let sections = [Combinations(), PermutationsSection()]
 
-StaticRenderer(elements: sections.map { $0.buildElement() }).render()
+let renderer = StaticRenderer(elements: sections.map { $0.buildElement() })
+
+//document.head.appendChild()
 
 for section in sections {
     var div = document.createElement("div")
     div.innerHTML = section.buildElement().render().jsValue()
-    _ = document.body.appendChild(div)
+    _ = document.object!.getElementById!("content").appendChild(div)
     section.updateElements()
 }
 

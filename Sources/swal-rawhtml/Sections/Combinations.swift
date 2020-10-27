@@ -47,13 +47,13 @@ class Combinations: Section {
     }
     
     override internal func buildInputArea() -> HTMLElement {
-        HStack {
+        HStack(justify: .spaceBetween, align: .center) {
             VStack {
-                HStack {
+                HStack(align: .center) {
                     Paragraph("array:")
                     Input(type: .string, id: Element.arrayInput.rawValue)
                 }
-                HStack {
+                HStack(align: .center) {
                     Paragraph("count:")
                     Input(
                         type: .number,

@@ -94,61 +94,7 @@
                 </a>
             </div>
         </header>
-        <div class="content">
-            <div class="h-flex centered">
-                <h2>Combinations</h2>
-                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Combinations.md">ref</a>
-            </div>
-            <code>combinations(ofCount:)</code>
-            <p>A type that computes combinations of a collection's elements.</p>
-            <small>This method returns a sequence of all the different combinations of a collection's elements, with each combination in the order of the original collection.</small>
-            <div class="h-flex input-group">
-                <div>
-                    <input type="string" id="combo-array-input">
-                    <div class="h-flex centered">
-                        <small>count</small>
-                        <input type="range" id="combo-count-input" name="Combinations" min="1" max="5" step="1" value="1">
-                    </div>
-                </div>
-                <div class="output" id="combo-output"></div>
-            </div>
-
-            <div class="h-flex centered">
-                <h2>Permutations</h2>
-                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Permutations.md">ref</a>
-            </div>
-            <code>permutations(ofCount:)</code>
-            <p>A type that computes permutations of a collection's elements, or of a subset of those elements.</p>
-            <small>This method, when called without the ofCount parameter, returns a sequence of all the different permutations of a collection's elements</small>
-            <br>
-            <div class="v-flex">
-                <div class="h-flex centered">
-                    <small>input array: </small>
-                    <input type="string" id="permute-array-input">
-                </div>
-                <div class="h-flex centered">
-                    <small>ofCount: </small>
-                    <input type="range" id="permute-count-input" min="1" max="5" step="1" value="1">
-                </div>
-            </div>
-            <br>
-            <div class="h-flex input-group">
-                <small><code id="permute-array-output"></code>.combinations(ofCount: <code id="permute-count-output"></code>)</small>
-                <div class="output" id="permute-output"></div>
-            </div>
-            <div class="h-flex centered">
-                <h2>Rotation</h2>
-                <a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Rotate.md">ref</a>
-            </div>
-            <code>rotate(toStartAt: Index)</code>
-            <p>A mutating method that rotates the elements of a collection to new positions.</p>
-            <small>To work around the CoW / slice mutation problem for divide-and-conquer algorithms, which are the idiomatic use case for rotation, this also includes variants that take a range:</small>
-            <br>
-            <code>rotate(subrange: Range&lt;Index&gt;, toStartAt: Index)</code>
-            <input type="string" id="rotate-array-input">
-            <small>rotate to start at:</small>
-            <input type="range" min="0" max="100" value="1" id="rotate-to-input">
-            <div class="output" id="rotate-output"></div>
+        <div class="content" id="content">
         </div>
     </body>
 </html>

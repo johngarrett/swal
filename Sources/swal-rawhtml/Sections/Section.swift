@@ -23,11 +23,11 @@ class Section {
 extension Section {
     func buildElement() -> HTMLElement {
         Div {
-            HStack {
+            HStack(justify: .spaceBetween, align: .center) {
                 Header(.header2, text: title)
                 Link(href: referenceLink) { "ref" }
             }
-            VStack { codeBlocks() }
+            Div { codeBlocks() }
             Paragraph(subtitle)
             Small { additionalText }
             Div("input-group") { buildInputArea() }

@@ -24,7 +24,7 @@ struct StaticRenderer {
         """
     }
     
-    private func getHead() -> String {
+     func getHead() -> String {
         let fonts: String = """
             <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;700&display=swap" rel="stylesheet">
         """
