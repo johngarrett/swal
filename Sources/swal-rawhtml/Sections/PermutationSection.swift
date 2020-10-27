@@ -1,7 +1,7 @@
 import HyperSwift
 import JavaScriptKit
 
-class PermutationsSection: Section {
+class PermutationSection: Section {
     enum Element: String {
         case countInput = "perm-count-input",
              arrayInput = "perm-array-input",

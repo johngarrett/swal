@@ -9,9 +9,17 @@ func element(_ id: String) -> JSObject? {
 
 let document = JSObject.global.document
 let sections = [
-    Combinations(),
-    PermutationsSection(),
-    Rotations()
+    CombinationSection(),
+    PermutationSection(),
+    RotationSection(),
+    PartitionSection(),
+    ChainSection(),
+    ProductSection(),
+    CycleSection(),
+    RandomSampleSection(),
+    UniqueSection(),
+    ChunkedSection(),
+    IndexedSection()
 ]
 
 let renderer = StaticRenderer(elements: sections.map { $0.buildElement() })

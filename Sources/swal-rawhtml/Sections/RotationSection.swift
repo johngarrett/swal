@@ -1,7 +1,7 @@
 import HyperSwift
 import JavaScriptKit
 
-class Rotations: Section {
+class RotationSection: Section {
     
     enum Element: String {
          case arrayInput = "rotate-array-input",

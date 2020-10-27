@@ -1,7 +1,7 @@
 import HyperSwift
 import JavaScriptKit
 
-class Combinations: Section {
+class CombinationSection: Section {
     var combinationCount: Int = 1 {
         didSet { updateElements() }
     }
