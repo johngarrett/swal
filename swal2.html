@@ -1,0 +1,29 @@
+<html>
+    <head>
+<!-- Analytical info, you can disable this if you'd like -->
+<script type="text/javascript">
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var u="https://garrepidev.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/garrepidev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    .output {
+	
+	width:50.0%;
+}
+
+</style>
+    </head>
+    <body>
+    <div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><h2>Combinations</h2><a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Combinations.md">ref</a></div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: column;flex-wrap: nowrap;"><code>combinations(ofCount: )</code></div><p>A type that computes combinations of a collection's elements.</p><small>This method returns a sequence of all the different combinations of a collection's elements, with each combination in the order of the original collection.</small><div class="input-group"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: column;flex-wrap: nowrap;width:50.0%;"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><p>array:</p><input type="string" id="combo-array-input"></div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><p>count:</p><input type="number" value="[1, 2, 3, 4]" id="combo-count-input" min="0" max="1"></div></div><div class="output" id="combo-output"></div></div></div></div><div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><h2>Permutations</h2><a href="https://github.com/apple/swift-algorithms/blob/main/Guides/Permutations.md">ref</a></div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: column;flex-wrap: nowrap;"><code>permutations(ofCount: )</code></div><p>A type that computes permutations of a collection's elements, or of a subset of those elements.</p><small>This method, when called without the ofCount parameter, returns a sequence of all the different permutations of a collection's elements</small><div class="input-group"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: column;flex-wrap: nowrap;width:50.0%;"><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><p>array:</p><input type="string" id="perm-array-input"></div><div style="display: flex;justify-content: flex-start;align-items: stretch;flex-direction: row;flex-wrap: nowrap;"><p>count:</p><input type="number" id="perm-count-input" max="1" value="[1, 2, 3, 4]" min="0"></div></div><div class="output" id="perm-output"></div></div></div></div>
+</body>
+</html>

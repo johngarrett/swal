@@ -1,4 +1,6 @@
 import JavaScriptKit
+import HyperSwift
+import Foundation
 import Algorithms
 
 func element(_ id: String) -> JSObject? {
@@ -6,20 +8,16 @@ func element(_ id: String) -> JSObject? {
 }
 
 let document = JSObject.global.document
+let sections = [Combinations(), PermutationsSection()]
 
-var div = document.createElement("div")
-let comb = Combinations()
-div.innerHTML = comb.buildElement().render().jsValue()
-_ = document.body.appendChild(div)
-comb.updateElements()
+StaticRenderer(elements: sections.map { $0.buildElement() }).render()
 
-// permutations
-var div2 = document.createElement("div")
-let perm = PermutationsSection()
-div2.innerHTML = perm.buildElement().render().jsValue()
-_ = document.body.appendChild(div2)
-perm.updateElements()
-
+for section in sections {
+    var div = document.createElement("div")
+    div.innerHTML = section.buildElement().render().jsValue()
+    _ = document.body.appendChild(div)
+    section.updateElements()
+}
 
 // rotation
 var rotationInput = [10, 20, 30, 40, 50, 60] {
