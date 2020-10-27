@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "HyperSwift",
+        "repositoryURL": "https://github.com/johngarrett/HyperSwift",
+        "state": {
+          "branch": "master",
+          "revision": "8d620f6048ae722fb9a1e55e5173d638a6088b62",
+          "version": null
+        }
+      },
+      {
         "package": "JavaScriptKit",
         "repositoryURL": "https://github.com/swiftwasm/JavaScriptKit",
         "state": {

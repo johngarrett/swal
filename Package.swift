@@ -7,14 +7,16 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "JavaScriptKit", url: "https://github.com/swiftwasm/JavaScriptKit", from: "0.8.0"),
-        .package(url: "https://github.com/apple/swift-algorithms", from: "0.0.1")
+        .package(url: "https://github.com/apple/swift-algorithms", from: "0.0.1"),
+        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master"))
     ],
     targets: [
         .target(
             name: "swal-rawhtml",
             dependencies: [
                 .product(name: "Algorithms", package: "swift-algorithms"),
-                .product(name: "JavaScriptKit", package: "JavaScriptKit")
+                .product(name: "JavaScriptKit", package: "JavaScriptKit"),
+                "HyperSwift"
             ]),
         .testTarget(
             name: "swal-rawhtmlTests",

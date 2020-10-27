@@ -39,6 +39,11 @@
             border-radius: 4px;
             padding: 2.5px 5px;
         }
+        .v-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
         .h-flex {
             display: flex;
             flex-direction: row;
@@ -102,7 +107,7 @@
                     <input type="string" id="combo-array-input">
                     <div class="h-flex centered">
                         <small>count</small>
-                        <input type="number" id="combo-count-input" name="Combinations" min="1" max="5" value="1">
+                        <input type="range" id="combo-count-input" name="Combinations" min="1" max="5" step="1" value="1">
                     </div>
                 </div>
                 <div class="output" id="combo-output"></div>
@@ -115,14 +120,20 @@
             <code>permutations(ofCount:)</code>
             <p>A type that computes permutations of a collection's elements, or of a subset of those elements.</p>
             <small>This method, when called without the ofCount parameter, returns a sequence of all the different permutations of a collection's elements</small>
-            <div class="h-flex input-group">
-                <div>
+            <br>
+            <div class="v-flex">
+                <div class="h-flex centered">
+                    <small>input array: </small>
                     <input type="string" id="permute-array-input">
-                    <div class="h-flex centered">
-                        <small>count</small>
-                        <input type="number" id="permute-count-input" min="1" max="5" value="1">
-                    </div>
                 </div>
+                <div class="h-flex centered">
+                    <small>ofCount: </small>
+                    <input type="range" id="permute-count-input" min="1" max="5" step="1" value="1">
+                </div>
+            </div>
+            <br>
+            <div class="h-flex input-group">
+                <small><code id="permute-array-output"></code>.combinations(ofCount: <code id="permute-count-output"></code>)</small>
                 <div class="output" id="permute-output"></div>
             </div>
             <div class="h-flex centered">
