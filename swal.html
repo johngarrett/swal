@@ -18,9 +18,9 @@
         <style>
         body {
             font-family: 'Trispace', sans-serif;
-            color: #2c3531;
+            color: #ffffff;
             display: grid;
-            background-color: #d1e8e2;
+            background-color: #474747;
             margin: 0 !important;
         }
         .content {
@@ -35,34 +35,18 @@
             border: 0px;
         }
         code {
+            color: #474747;
             background-color: #f6f6f6;
             border-radius: 4px;
             padding: 2.5px 5px;
-        }
-        .v-flex {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .h-flex {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .centered {
-            align-items: center;
-        }
-        .input-group {
-            margin: 20px 0px;
-        }
-        .output {
-            max-height: 450px;
-            overflow-y: scroll;
         }
         small {
             opacity: 80%;
         }
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
             color: #d1e8e2;
             background-color: #116466;
@@ -70,8 +54,10 @@
         header h1 {
             margin: 0 !important;
         }
-        header p {
-            margin: 0 !important;
+        header .h-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         header img {
             width: 50px;
@@ -81,10 +67,7 @@
     </head>
     <body>
         <header class="h-flex centered">
-            <div>
-                <h1>Swift Algorithms</h1>
-                <p><i>in wasm</i></p>
-            </div>
+            <h1>Swift, WASM, and Algorithms</h1>
             <div class="h-flex">
                 <a href="https://github.com/apple/swift-algorithms">
                     <img src="https://pngimg.com/uploads/github/github_PNG58.png" alt="github"/>

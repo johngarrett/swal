@@ -30,7 +30,7 @@ extension Section {
             Div { codeBlocks() }
             Paragraph(subtitle)
             Small { additionalText }
-            Div("input-group") { buildInputArea() }
+            buildInputArea()
         }
     }
     

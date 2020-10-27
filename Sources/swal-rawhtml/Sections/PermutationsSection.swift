@@ -36,19 +36,19 @@ class PermutationsSection: Section {
     override internal func updateElements() {
         element(Element.arrayInput.rawValue)?.onchange = .function(updateCombinationInput)
         element(Element.countInput.rawValue)?.onchange = .function(updatepermutationCount)
-        element(Element.output.rawValue)?.innerHTML = inputArray
+        element(Element.output.rawValue)?.innerHTML = Paragraph(inputArray
             .permutations(ofCount: permutationCount)
             .map { $0.description }
             .joined(separator: "<br>")
-            .jsValue()
+        ).margin(0).render().jsValue()
         element(Element.arrayInput.rawValue)?.value = inputArray.description.jsValue()
         element(Element.countInput.rawValue)?.value = permutationCount.jsValue()
         element(Element.countInput.rawValue)?.max = inputArray.count.jsValue()
     }
     
     override internal func buildInputArea() -> HTMLElement {
-        HStack(justify: .spaceBetween, align: .center) {
-            VStack {
+        ResultPane(
+            input: VStack {
                 HStack(align: .center) {
                     Paragraph("array:")
                     Input(type: .string, id: Element.arrayInput.rawValue)
@@ -63,10 +63,9 @@ class PermutationsSection: Section {
                         max: "\(permutationCount)"
                     )
                 }
-            }.width(50, .percent)
-            Div("output", id: Element.output.rawValue)
-                .width(50, .percent)
-        }
+            },
+            outputText: "",
+            outputId: Element.output.rawValue
+        )
     }
-    
 }
