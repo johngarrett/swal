@@ -5,7 +5,8 @@ class PermutationSection: Section {
     enum Element: String {
         case countInput = "perm-count-input",
              arrayInput = "perm-array-input",
-             output = "perm-output"
+             output = "perm-output",
+             outputTitle = "perm-output-title"
     }
     
     var permutationCount: Int = 1 {
@@ -41,6 +42,7 @@ class PermutationSection: Section {
             .map { $0.description }
             .joined(separator: "<br>")
         ).margin(0).render().jsValue()
+        element(Element.outputTitle.rawValue)?.innerHTML = Code("\(inputArray.description).permutations(ofCount: \(permutationCount))").render().jsValue()
         element(Element.arrayInput.rawValue)?.value = inputArray.description.jsValue()
         element(Element.countInput.rawValue)?.value = permutationCount.jsValue()
         element(Element.countInput.rawValue)?.max = inputArray.count.jsValue()
@@ -64,8 +66,7 @@ class PermutationSection: Section {
                     )
                 }
             },
-            outputText: "",
-            outputId: Element.output.rawValue
+            output: (titleId: Element.outputTitle.rawValue, resultId: Element.output.rawValue)
         )
     }
 }

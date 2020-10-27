@@ -6,7 +6,8 @@ class RotationSection: Section {
     enum Element: String {
          case arrayInput = "rotate-array-input",
          rotateToInput = "rotate-to-input",
-         output = "rotate-output"
+         output = "rotate-output",
+         outputTitle = "rotate-output-title"
     }
     
     var inputArray: [Int] = [1, 2, 3, 4] {
@@ -44,6 +45,7 @@ class RotationSection: Section {
         element(Element.arrayInput.rawValue)?.onchange = .function(updateSourceArray)
         element(Element.rotateToInput.rawValue)?.onchange = .function(updateRotateTo)
         element(Element.output.rawValue)?.innerHTML = Paragraph(inputArray.description).margin(0).render().jsValue()
+        element(Element.outputTitle.rawValue)?.innerHTML = Code("\(inputArray.description).rotate(toStartAt: \(rotateTo))").render().jsValue()
         element(Element.rotateToInput.rawValue)?.value = rotateTo.jsValue()
         element(Element.rotateToInput.rawValue)?.max = (inputArray.count - 1).jsValue()
     }
@@ -66,8 +68,7 @@ class RotationSection: Section {
                     )
                 }
             },
-            outputText: "",
-            outputId: Element.output.rawValue
+            output: (titleId: Element.outputTitle.rawValue, resultId: Element.output.rawValue)
         )
     }
 }

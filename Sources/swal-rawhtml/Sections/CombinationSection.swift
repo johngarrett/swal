@@ -20,6 +20,7 @@ class CombinationSection: Section {
     enum Element: String {
         case countInput = "combo-count-input",
              arrayInput = "combo-array-input",
+             outputTitle = "combo-output-title",
              comboOutput = "combo-output"
     }
 
@@ -41,6 +42,7 @@ class CombinationSection: Section {
             .map { $0.description }
             .joined(separator: "<br>")
         ).margin(0).render().jsValue()
+        element(Element.outputTitle.rawValue)?.innerHTML = Code("\(inputArray.description).combinations(ofCount: \(combinationCount))").render().jsValue()
         element(Element.arrayInput.rawValue)?.value = inputArray.description.jsValue()
         element(Element.countInput.rawValue)?.value = combinationCount.jsValue()
         element(Element.countInput.rawValue)?.max = inputArray.count.jsValue()
@@ -64,8 +66,10 @@ class CombinationSection: Section {
                     )
                 }
             },
-            outputText: "",
-            outputId: Element.comboOutput.rawValue
+            output: (
+                titleId: Element.outputTitle.rawValue,
+                resultId: Element.comboOutput.rawValue
+            )
         )
     }
 }

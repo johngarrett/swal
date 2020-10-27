@@ -1,7 +1,7 @@
 import HyperSwift
 
 class ResultPane: HTMLComponent {
-    init(input: HTMLComponent, outputText: String, outputId: String) {
+    init(input: HTMLComponent, output: (titleId: String, resultId: String)) {
         super.init(
             HStack(wrap: .wrap) {
                 input
@@ -9,7 +9,11 @@ class ResultPane: HTMLComponent {
                     .color(CSSColor("#000000"))
                     .backgroundColor(CSSColor("#B7B7B7"))
                     .padding(10)
-                Div("", id: outputId) { outputText }
+                VStack(align: .center) {
+                    RawHTML("<h3 id=\"\(output.titleId)\"></h3>")
+                    Paragraph(id: output.resultId, text: "")
+                        .width(100, .percent)
+                }
                     .rawCSS("flex-grow", "1")
                     .maxHeight(400)
                     .overflow(.scroll)
