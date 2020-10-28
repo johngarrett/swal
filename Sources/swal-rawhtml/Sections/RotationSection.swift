@@ -11,12 +11,21 @@ class RotationSection: Section {
     }
     
     var inputArray: [Int] = [1, 2, 3, 4] {
+        didSet {
+            rotateTo = 0
+            updateElements()
+        }
+    }
+    
+    lazy var rotatedArray: [Int] = inputArray {
         didSet { updateElements() }
     }
+    
     var rotateTo: Int = 0 {
         didSet {
+            rotatedArray = inputArray.map { $0 }
+            rotatedArray.rotate(toStartAt: rotateTo)
             updateElements()
-            inputArray.rotate(toStartAt: rotateTo)
         }
     }
     
@@ -42,9 +51,10 @@ class RotationSection: Section {
     }
     
     override internal func updateElements() {
+        element(Element.arrayInput.rawValue)?.value = inputArray.description.jsValue()
         element(Element.arrayInput.rawValue)?.onchange = .function(updateSourceArray)
         element(Element.rotateToInput.rawValue)?.onchange = .function(updateRotateTo)
-        element(Element.output.rawValue)?.innerHTML = Paragraph(inputArray.description).margin(0).render().jsValue()
+        element(Element.output.rawValue)?.innerHTML = Paragraph(rotatedArray.description).margin(0).render().jsValue()
         element(Element.outputTitle.rawValue)?.innerHTML = Code("\(inputArray.description).rotate(toStartAt: \(rotateTo))").render().jsValue()
         element(Element.rotateToInput.rawValue)?.value = rotateTo.jsValue()
         element(Element.rotateToInput.rawValue)?.max = (inputArray.count - 1).jsValue()
