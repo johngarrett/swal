@@ -7,7 +7,19 @@ class Section {
     let codeFunctions: [String]
     let subtitle: String
     let additionalText: String
-    internal func buildInputArea() -> HTMLElement { RawHTML("TODO") }
+    internal func buildInputArea() -> HTMLElement {
+        ResultPane(
+            input: VStack {
+                Paragraph("This sandbox has not been implimented yet")
+                HStack(justify: .flexStart, align: .center) {
+                    Small { "Check the progress here: " }
+                    Link(href: "https://www.github.com/johngarrett/swal-rawhtml") { "github" }
+                        .color(CSSColor("#0096cf"))
+                }
+            },
+            output: (titleId: "", resultId: "")
+        )
+    }
     internal func updateElements() { print("UPDATE ELEMENTS NOT IMPILMENTED") }
 
     init(title: String, ref: String, functions: [String], subtitle: String, additionalText: String) {
@@ -23,17 +35,28 @@ class Section {
 extension Section {
     func buildElement() -> HTMLElement {
         Div {
-            HStack(justify: .spaceBetween, align: .center) {
+            HStack(justify: .flexStart, align: .center) {
                 Header(.header2, text: title)
-                Link(href: referenceLink) { "ref" }
+                Link(href: referenceLink) { "⎋" }
+                    .color(CSSColor("#0096cf"))
+                    .margin(left: 10)
+                    .textDecoration(.none)
             }
-            Div {
+            VStack(align: .flexStart) {
                 codeBlocks()
+                    .map { $0
+                        .margin(2.5)
+                        .color(CSSColor("#ffb454"))
+                        .backgroundColor(CSSColor("#191f26"))
+                        .rawCSS("font-size", "14px")
+                    }
                     .map { $0.render() }
-                    .joined(separator: "<br>")
+                    .joined()
             }
             Paragraph(subtitle)
+                .font(weight: .sixhundred, size: 16, family: "'Open Sans', sans-serif")
             Small { additionalText }
+                .font(weight: .fourhundred, size: 14, family: "'Open Sans', sans-serif")
             buildInputArea()
         }
     }
