@@ -10,17 +10,17 @@ class Section {
     internal func buildInputArea() -> HTMLElement {
         ResultPane(
             input: VStack {
-                Paragraph("This sandbox has not been implimented yet")
+                Paragraph("This sandbox has not been implemented yet")
                 HStack(justify: .flexStart, align: .center) {
                     Small { "Check the progress here: " }
-                    Link(href: "https://www.github.com/johngarrett/swal-rawhtml") { "github" }
+                    Link(href: "https://www.github.com/johngarrett/swal-wasm") { "github" }
                         .color(CSSColor("#0096cf"))
                 }
             },
             output: (titleId: "", resultId: "")
         )
     }
-    internal func updateElements() { print("UPDATE ELEMENTS NOT IMPILMENTED") }
+    internal func updateElements() { print("UPDATE ELEMENTS NOT implemented") }
 
     init(title: String, ref: String, functions: [String], subtitle: String, additionalText: String) {
         self.title = title
