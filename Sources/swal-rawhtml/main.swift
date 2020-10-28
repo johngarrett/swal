@@ -24,6 +24,8 @@ let sections = [
 
 let renderer = StaticRenderer(elements: sections.map { $0.buildElement() })
 
+renderer.render()
+
 //document.head.appendChild()
 
 for section in sections {

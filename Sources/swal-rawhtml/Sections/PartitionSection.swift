@@ -5,7 +5,7 @@ class PartitionSection: Section {
     init() {
         super.init(
             title: "Partition",
-            ref: "https://github.com/apple/swift-algorithms/blob/main/Guides/Rotate.md",
+            ref: "https://github.com/apple/swift-algorithms/blob/main/Guides/Partition.md",
             functions: [
                 "tablePartition(by:)",
                 "partitioningIndex(where:)"
