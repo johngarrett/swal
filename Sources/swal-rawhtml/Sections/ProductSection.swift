@@ -32,12 +32,14 @@ class ProductSection: Section {
     }
     
     var productResult: String {
-        product(sequence, collection)
-            .map {
-                "(\($0.0), \($0.1))"
+        Dictionary.init(grouping: product(sequence, collection), by: { $0.0 }) // group by like sequence values
+            .sorted(by: { $0.key < $1.key }) // sort descinding
+            .map { index, row in
+                row.map { "(\($0.0), \($0.1))" } // print each tuple as (#, #)
+                    .joined(separator: " ")
             }.joined(separator: "<br>")
     }
-    
+
     override internal func updateElements() {
         element(Element.sequenceInput.rawValue)?.value = sequence.description.jsValue()
         element(Element.sequenceInput.rawValue)?.onchange = .function(updateSequence)
@@ -53,7 +55,7 @@ class ProductSection: Section {
         ResultPane(
             input: VStack {
                 HStack(justify: .spaceBetween, align: .center) {
-                    Paragraph("sequence (ClosedRange<Int>):")
+                    Paragraph("sequence (Int...Int):")
                     Input(type: .string, id: Element.sequenceInput.rawValue)
                 }
                 HStack(justify: .spaceBetween, align: .center) {
