@@ -9,3 +9,18 @@ extension Array where Element == Int {
         }
     }
 }
+extension Array where Element == String {
+    init(from string: String) {
+        self = string
+            .trimmingCharacters(in: . whitespacesAndNewlines)
+            .dropFirst() // drop [
+            .dropLast() // drop ]
+            .split(separator: ",")
+            .map {
+                String(
+                    $0.trimmingCharacters(in: .whitespaces)
+                        .dropFirst().dropLast() // drop " and "
+                )
+            }
+    }
+}
