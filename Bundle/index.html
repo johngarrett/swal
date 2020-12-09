@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>Swift, WebAssembly, and Algorithms</title>
+        <meta property="description" content="A sandox to explore Swift Algorithms, from the browser, using WASM">
+        <meta property="og:url" content="https://garrepi.dev/swal">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Swift, WebAssembly, and Algorithms">
+        <meta property="og:description" content="A sandox to explore Swift Algorithms, from the browser, using WASM">
+        <meta property="og:image" content="https://garrepi.dev/images/prj/swal.png">
+        <meta property="og:image:secure_url" content="https://garrepi.dev/images/prj/swal.png">
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="garrepi.dev">
+        <meta property="twitter:url" content="https://garrepi.dev/swal">
+        <meta name="twitter:title" content="Swift, WebAssembly, and  Algorithms">
+        <meta name="twitter:description" content="A sandox to explore Swift Algorithms, from the browser, using WASM">
+        <meta name="twitter:image" content="https://garrepi.dev/images/prj/swal.png">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="garrepidev">
+        <link rel="icon" type="image/jpeg" href="/images/prj/swal.png">
+        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+        <!-- I know, I hate google anayltics. i'm looking for free alternatives - you can disable this if you'd like -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZD103LZ87"></script>
+        <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'G-YZD103LZ87');
+                </script>
+        <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+        body {
+            font-family: 'Trispace', sans-serif;
+            color: #c5c5c5;
+            display: grid;
+            background-color: hsl(210, 25%, 8%);
+            margin: 0 !important;
+        }
+        .content {
+            max-width: 800px;
+            place-self: center;
+            padding: 0 20px;
+        }
+        input {
+            line-height: 18px;
+            text-align: center;
+            background-color: #737480;
+            border: 0px;
+        }
+        code {
+            color: rgb(181, 188, 109);
+            background-color: #191f26;
+            border-radius: 4px;
+            padding: 2.5px 5px;
+        }
+        small {
+            opacity: 80%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: #d1e8e2;
+            background-color: #116466;
+        }
+        header h1 {
+            margin: 0 !important;
+        }
+        header .h-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+        }
+        h3 code {
+            color: #b7b9cc;
+        }
+        body {
+            width: 100%;
+        }
+        </style>
+    <script type="text/javascript" src="34f36b7dde7a2e2e.js"></script></head>
+    <body>
+        <header class="h-flex centered">
+            <h1>Swift, Wasm, and Algorithms</h1>
+            <div class="h-flex">
+                <a href="https://github.com/johngarrett/swal-wasm" style="margin-right: 10px;">
+                    <img src="https://garrepi.dev/images/github-white.png" alt="github"/>
+                </a>
+                <a href="https://twitter.com/garrepi">
+                    <img src="https://garrepi.dev/images/twitter-white.png" alt="twitter"/>
+                </a>
+            </div>
+        </header>
+        <noscript style="margin: 5%">
+            <h1>Javascript Required</h1>
+            <p>
+            I hate javascript as much as the next guy; I mostly navigate with it turned off.
+            <br>
+            However, this site is powered by WebAssembly. For the interoperation to work, Javascript is required.
+            </p>
+            <small>
+            Thanks for understanding
+            </small>
+        </noscript>
+        <div class="content" id="content">
+        </div>
+    </body>
+</html>

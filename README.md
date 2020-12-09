@@ -21,9 +21,9 @@ also, `FileManager` and `String.write(to:,_:,_:)` seem to be broken in the wasm 
 - [X] Combinations  
 - [X] Permutations  
 - [X] Rotations  
-- [ ] Partitions  
-- [ ] Chain  
-- [ ] Product  
+- [X] Partitions  
+- [X] Chain  
+- [X] Product  
 - [ ] Cycled  
 - [ ] Random Subset  
 - [ ] Stable Subset  
